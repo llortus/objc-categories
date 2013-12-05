@@ -18,7 +18,7 @@
 //  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND
 //  ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED
 //  WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE
-//  DISCLAIMED. IN NO EVENT SHALL <COPYRIGHT HOLDER> BE LIABLE FOR ANY
+//  DISCLAIMED. IN NO EVENT SHALL Jesse Sipprell BE LIABLE FOR ANY
 //  DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES
 //  (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
 //  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND
@@ -31,10 +31,13 @@
 
 @interface NSImage (SimpleRotation)
 
-// Returns a new NSImage rotated counter-clockwise by the specified degrees, negative numbers
-// will cause clockwise rotation. The new image will be resized so that it is large enough to
-// contain the original image rectangle after rotation. Areas of the new image which are "empty"
-// due to the rotation will be transparent.
+// Returns a new NSImage containing the receiver image rotated counter-clockwise
+// around the center point of the receiver's rectangle by the specified number
+// of degrees; negative numbers will cause clockwise rotation. The new image will
+// be resized so that it is large enough to contain the entire original image
+// rectangle after rotation. Areas of the new image rectangle which are "empty"
+// because they fall outside the original image rectangle after rotation will be
+// transparent.
 - (NSImage*)imageRotatedByDegrees:(CGFloat)degrees;
 
 // Performs the same rotation where positive degrees indicate clockwise rotation and negative
